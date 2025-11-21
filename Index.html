@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Story Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>⚡ Content Generator <span class="beta">BETA</span></h1>
+            <p>De una idea a contenido viral en segundos.</p>
+            
+            <div class="api-box">
+                <input type="password" id="apiKeyInput" placeholder="Pega tu API Key de Gemini aquí">
+                <button id="saveKeyBtn" class="btn-small"><i class="fas fa-save"></i> Guardar Key</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <label>1. ¿Cuál es tu idea?</label>
+                <textarea id="ideaInput" placeholder="Ej: Un gato que aprende a programar y hackea la NASA..."></textarea>
+            </section>
+
+            <section class="options-section">
+                <label>2. Elige el Tono/Género</label>
+                <div class="button-group" id="genreGroup">
+                    <button class="option-btn" data-value="Comedia">😂 Comedia</button>
+                    <button class="option-btn" data-value="Terror">👻 Terror</button>
+                    <button class="option-btn" data-value="Motivacional">🚀 Motivacional</button>
+                    <button class="option-btn" data-value="Educativo">🧠 Educativo</button>
+                    <button class="option-btn" data-value="Dramático">🎭 Dramático</button>
+                </div>
+            </section>
+
+            <section class="options-section">
+                <label>3. ¿Para dónde es?</label>
+                <div class="button-group" id="platformGroup">
+                    <button class="option-btn" data-value="TikTok">🎵 TikTok (Guion)</button>
+                    <button class="option-btn" data-value="YouTube">📺 YouTube (Video Largo)</button>
+                    <button class="option-btn" data-value="Facebook">📘 Facebook (Post)</button>
+                    <button class="option-btn" data-value="LinkedIn">💼 LinkedIn (Profesional)</button>
+                </div>
+            </section>
+
+            <div class="action-area">
+                <button id="generateBtn" class="btn-primary">✨ Generar Historia</button>
+            </div>
+
+            <div id="resultArea" class="result-hidden">
+                <div class="result-card">
+                    <h3>📝 Tu Contenido Generado</h3>
+                    <div id="storyOutput" class="story-text"></div>
+                    <button class="btn-copy" onclick="copiarTexto()">Copiar Texto</button>
+                </div>
+
+                <div class="ai-suggestion">
+                    <h4>🎬 Sugerencia de Producción</h4>
+                    <p id="aiToolSuggestion">Para este tipo de video te recomiendo usar...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Potenciado por Google Gemini | Creado por Ti</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
